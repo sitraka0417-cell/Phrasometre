@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "733060738530",
+    "project_id": "phrasometre",
+    "storage_bucket": "phrasometre.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733060738530:android:ef7ffa4bb16700b38f9dbb",
+        "android_client_info": {
+          "package_name": "mg.sitraka.phrasometre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733060738530-rbsigilhmpr45uvhubtp0bvjoc6f89en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAUeZyO_C10N_hNkAON-es-H_G8Gm8hmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733060738530-rbsigilhmpr45uvhubtp0bvjoc6f89en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

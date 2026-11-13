@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Phrasomètre</string>
+    <string name="widget_description">Vos clics du jour et du mois</string>
+    <string name="widget_aujourdhui">clics aujourd\'hui</string>
+</resources>
