@@ -22,7 +22,6 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.FormatSize
 import androidx.compose.material.icons.filled.Palette
-import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material.icons.filled.Vibration
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -156,13 +155,6 @@ fun EcranReglages(vm: AppViewModel, snack: SnackbarHostState, onMenu: () -> Unit
             // Comptage
             item {
                 Section("Comptage") {
-                    LigneSwitch(
-                        icone = { Icon(Icons.Default.TouchApp, contentDescription = null, tint = MaterialTheme.colorScheme.primary) },
-                        titre = "Confirmer chaque clic",
-                        detail = "Évite les clics accidentels.",
-                        coche = r.confirmer,
-                        onChange = { v -> vm.modifierReglages { it.copy(confirmer = v) } }
-                    )
                     LigneSwitch(
                         icone = { Icon(Icons.Default.Vibration, contentDescription = null, tint = MaterialTheme.colorScheme.primary) },
                         titre = "Vibration au clic",

@@ -30,7 +30,6 @@ fun EcranAccueil(vm: AppViewModel, snack: SnackbarHostState, onMenu: () -> Unit,
     val ctx = LocalContext.current
     val haptique = LocalHapticFeedback.current
     val scope = rememberCoroutineScope()
-    var aConfirmer by remember { mutableStateOf<Phrase?>(null) }
 
     val phrases = remember(d, mois) { d.phrases.filter { it.mois == mois }.sortedBy { it.ordre } }
     val comptes = remember(d) { d.clics.groupingBy { it.phraseId }.eachCount() }
@@ -47,7 +46,7 @@ fun EcranAccueil(vm: AppViewModel, snack: SnackbarHostState, onMenu: () -> Unit,
             val r = snack.showSnackbar(
                 message = "+1 sur « ${p.texte} »",
                 actionLabel = "Annuler",
-                duration = SnackbarDuration.Short
+                duration = SnackbarDuration.Long
             )
             if (r == SnackbarResult.ActionPerformed) vm.depot.annulerClic(id)
         }
@@ -106,27 +105,10 @@ fun EcranAccueil(vm: AppViewModel, snack: SnackbarHostState, onMenu: () -> Unit,
                 }
             } else {
                 items(phrases, key = { it.id }) { p ->
-                    CartePhrase(p, comptes[p.id] ?: 0) {
-                        if (reglages.confirmer) aConfirmer = p else compter(p)
-                    }
+                    CartePhrase(p, comptes[p.id] ?: 0) { compter(p) }
                 }
             }
         }
-    }
-
-    aConfirmer?.let { p ->
-        AlertDialog(
-            onDismissRequest = { aConfirmer = null },
-            title = { Text("Confirmer le clic") },
-            text = { Text("Ajouter +1 à « ${p.texte} » ?\nCompteur actuel : ${comptes[p.id] ?: 0}") },
-            confirmButton = {
-                TextButton(onClick = {
-                    aConfirmer = null
-                    compter(p)
-                }) { Text("Oui, compter") }
-            },
-            dismissButton = { TextButton(onClick = { aConfirmer = null }) { Text("Annuler") } }
-        )
     }
 }
 
