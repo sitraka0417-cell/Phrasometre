@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "733060738530-m0e0icq812h2e5nk6kbtc0atpafc6ugf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mg.sitraka.phrasometre",
+            "certificate_hash": "a61f27a47385660c8de491b702f17b9d464d4daa"
+          }
+        },
+        {
           "client_id": "733060738530-rbsigilhmpr45uvhubtp0bvjoc6f89en.apps.googleusercontent.com",
           "client_type": 3
         }
